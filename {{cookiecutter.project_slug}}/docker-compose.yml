@@ -3,8 +3,8 @@ version: '3.7'
 services:
   # Service image
   app:
-    image: cookiecutter:latest
-    build: cookiecutter
+    image: pymodulenamegoeshere:latest
+    build: app
     volumes:
       - type: bind
         source: .
