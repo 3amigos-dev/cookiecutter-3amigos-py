@@ -111,3 +111,6 @@ venv.bak/
 
 # Pytest
 cov.xml
+
+# CookieCutter
+output

@@ -4,7 +4,6 @@
 `setuptools` Distribution for pymodulenamegoeshere
 """
 
-# {{{ Import
 # System  Imports
 import codecs
 import os
@@ -12,8 +11,6 @@ import re
 
 # External Imports
 from setuptools import setup
-
-# }}}
 
 PACKAGE_NAME = 'pymodulenamegoeshere'
 
