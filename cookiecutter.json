@@ -1,3 +1,6 @@
 {
-    "docker_app_basedir": "app"
+    "project_name":  "pymodulenamegoeshere",
+    "project_slug":  "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "py_modulename":  "{{ cookiecutter.project_slug }}",
+    "docker_application_dirname": "app"
 }

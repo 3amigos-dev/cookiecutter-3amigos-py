@@ -9,4 +9,4 @@ PYVER=3.7
 
 cd "${BASEDIR}"
 mkdir -p "${BASEDIR}/output"
-"python${PYVER}" -m cookiecutter -o "${BASEDIR}/output"
+"python${PYVER}" -m cookiecutter -o "${BASEDIR}/output" --no-input "${BASEDIR}"
