@@ -9,7 +9,7 @@
     "community_name":  "{{ cookiecutter.project_name }}",
     "docker_application_tagname": "other_app",
     "docker_workspace_dirname": "other_workspace",
-    "docker_application_dirname": "{{ docker_application_tagname }}",
+    "docker_application_dirname": "{{ cookiecutter.docker_application_tagname }}",
     "author_email": "other_youremailgoeshere",
     "author_name": "other_yournamegoeshere",
     "maintainer_name": "{{ cookiecutter.author_name }}",
