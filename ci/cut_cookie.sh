@@ -33,4 +33,6 @@ cd "${BASEDIR}"
 docker_compose_run app "/workspace/ci/in_docker/cut_cookie.sh"
 cd "${BASEDIR}/output/"*
 find . -maxdepth 1 -mindepth 1 -exec cp -r \{\} "${OUTPUTDIR}" \;
-mv "${BASEDIR}/orig_cookiecutter.json" "${BASEDIR}/cookiecutter.json" 
+if [ -e "${OUTPUTDIR}/orig_cookiecutter.json" ] ; then
+    mv "${BASEDIR}/orig_cookiecutter.json" "${BASEDIR}/cookiecutter.json" 
+fi
