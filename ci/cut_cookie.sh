@@ -22,6 +22,7 @@ if [ -d "${OUTPUTDIR}" ] ; then
     find . -maxdepth 1 -mindepth 1 -a ! -ipath ./.git -a ! -ipath ./cookiecutter.json -exec rm -rf \{\} \;
 fi
 if [ -e "${OUTPUTDIR}/cookiecutter.json" ] ; then
+    cp "${BASEDIR}/cookiecutter.json" "${BASEDIR}/orig_cookiecutter.json"
     cp "${OUTPUTDIR}/cookiecutter.json" "${BASEDIR}"
 fi
 
@@ -32,3 +33,4 @@ cd "${BASEDIR}"
 docker_compose_run app "/workspace/ci/in_docker/cut_cookie.sh"
 cd "${BASEDIR}/output/"*
 find . -maxdepth 1 -mindepth 1 -exec cp -r \{\} "${OUTPUTDIR}" \;
+mv "${BASEDIR}/orig_cookiecutter.json" "${BASEDIR}/cookiecutter.json" 
