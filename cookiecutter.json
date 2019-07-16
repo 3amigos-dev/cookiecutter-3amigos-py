@@ -1,5 +1,5 @@
 {
-    "project_name":  "other_pymodulenamegoeshere",
+    "project_name":  "otherpymodulenamegoeshere",
     "project_description": "other_descriptiongoeshere",
     "project_slug":  "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
     "github_org": "other_yourgithuborggoeshere",
