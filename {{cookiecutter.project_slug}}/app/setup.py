@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-`setuptools` Distribution for pymodulenamegoeshere
+`setuptools` Distribution for {{ cookiecutter.py_modulename }}
 """
 
 # System  Imports
@@ -12,7 +12,7 @@ import re
 # External Imports
 from setuptools import setup
 
-PACKAGE_NAME = 'pymodulenamegoeshere'
+PACKAGE_NAME = '{{ cookiecutter.py_modulename }}'
 
 
 def load_readme(fname):
@@ -23,7 +23,7 @@ def load_readme(fname):
     with codecs.open(file_path, encoding='utf-8') as fobj:
         sub = (
             '(https://github.com/'
-            'yourgithuborggoeshere/yourgithubrepogoeshere'
+            '{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}'
             '/blob/master/\\g<1>)'
         )
         markdown_fixed = re.sub(
@@ -59,20 +59,20 @@ def read_version():
 setup(
     name=PACKAGE_NAME,
     version=read_version(),
-    author='yournamegoeshere',
-    author_email='youremailgoeshere',
-    maintainer='yournamegoeshere',
-    maintainer_email='youremailgoeshere',
+    author='{{ cookiecutter.author_name }}',
+    author_email='{{ cookiecutter.author_email }}',
+    maintainer='{{ cookiecutter.maintainer_name }}',
+    maintainer_email='{{ cookiecutter.maintainer_email }}',
     packages=[PACKAGE_NAME],
     license='GPLv3+',
     description=(
-        'descriptiongoeshere'
+        '{{ cookiecutter.project_description }}'
     ),
     long_description=load_readme('README.md'),
     long_description_content_type='text/markdown',
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
     install_requires=[],
-    url='homepageurlgoeshere',
+    url='{{ cookiecutter.project_url }}',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Programming Language :: Python',

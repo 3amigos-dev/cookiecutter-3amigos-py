@@ -1,6 +1,16 @@
 {
     "project_name":  "pymodulenamegoeshere",
+    "project_description": "descriptiongoeshere",
     "project_slug":  "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "github_org": "yourgithuborggoeshere",
+    "github_repo": "yourgithubrepogoeshere",
+    "project_url": "https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}",
     "py_modulename":  "{{ cookiecutter.project_slug }}",
-    "docker_application_dirname": "app"
+    "community_name":  "{{ cookiecutter.project_name }}",
+    "docker_application_dirname": "app",
+    "author_email": "youremailgoeshere",
+    "author_name": "yournamegoeshere",
+    "maintainer_name": "{{ cookiecutter.author_name }}",
+    "maintainer_email": "{{ cookiecutter.author_email }}",
+    "project_email": "{{ cookiecutter.maintainer_email }}"
 }

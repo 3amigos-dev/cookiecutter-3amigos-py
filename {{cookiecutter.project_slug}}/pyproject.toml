@@ -1,4 +1,4 @@
 [tool.towncrier]
-    package = "pymodulenamegoeshere"
+    package = "{{ cookiecutter.py_modulename }}"
     package_dir = "app"
     filename = "NEWS.rst"
