@@ -10,7 +10,7 @@ source "${BASEDIR}/ci/shared/_docker_helper.sh"
 # Remove any old content
 rm -rf "${BASEDIR}/output"
 
-docker_compose_run app "/workspace/ci/in_docker/test.sh" "$@"
+docker_compose_run app "/workspace/ci/in_docker/cut_cookie.sh" "$@"
 
 # Test produced cookie cutter output
-"${BASEDIR}/output/otherpymodulenamegoeshere/ci.sh" test
+"${BASEDIR}/output/pymodulenamegoeshere/ci.sh" test

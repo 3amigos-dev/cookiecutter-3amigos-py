@@ -1,5 +1,5 @@
-# 3amigos GitHub Template Repository
-Starting point for a python based 3amigos library project.
+# {{ cookiecutter.project_name }}
+{{ cookiecutter.project_long_description }}
 
 Additional Documentation:
 * [News](NEWS.rst).
