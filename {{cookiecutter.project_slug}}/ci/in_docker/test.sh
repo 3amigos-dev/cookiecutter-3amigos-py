@@ -7,7 +7,7 @@ BASEDIR="$( dirname "$( dirname "${THISDIR}" )" )"
 
 source ${BASEDIR}/ci/in_docker/prepare.sh
 
-cd "${BASEDIR}/app"
+cd "${BASEDIR}/{{ cookiecutter.docker_application_dirname }}"
 # Version independant checks
 PYVER=3.7
 "python${PYVER}" -m pyspelling

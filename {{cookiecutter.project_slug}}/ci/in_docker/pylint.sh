@@ -7,7 +7,7 @@ BASEDIR="$( dirname "$( dirname "${THISDIR}" )" )"
 
 PYTHON="${1}"
 TARGET="${2}"
-if ! "${PYTHON}" -m pylint --rcfile "${BASEDIR}/app/.pylintrc" "${2}" ; then
+if ! "${PYTHON}" -m pylint --rcfile "${BASEDIR}/{{ cookiecutter.docker_application_dirname }}/.pylintrc" "${2}" ; then
    echo "Pylint failed on ${2}" >&2
    exit 1
 fi

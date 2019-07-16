@@ -7,4 +7,4 @@ BASEDIR="$( dirname "${THISDIR}" )"
 
 source "${BASEDIR}/ci/shared/_docker_helper.sh"
 
-docker_compose_run app "/workspace/ci/in_docker/pipenv.sh" "$@"
+docker_compose_run {{ cookiecutter.docker_application_tagname }} "/{{ cookiecutter.docker_workspace_dirname }}/ci/in_docker/pipenv.sh" "$@"
