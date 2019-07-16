@@ -2,7 +2,7 @@
 version: '3.7'
 services:
   # Service image
-  app:
+  {{ cookiecutter.docker_application_tagname }}:
     image: {{ cookiecutter.project_slug }}:latest
     build: {{ cookiecutter.docker_application_dirname }}
     volumes:

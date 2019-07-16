@@ -7,7 +7,7 @@ BASEDIR="$( dirname "$( dirname "${THISDIR}" )" )"
 
 source ${BASEDIR}/ci/in_docker/prepare.sh
 
-cd "${BASEDIR}/app"
+cd "${BASEDIR}/{{ cookiecutter.docker_application_dirname }}"
 rm -rf dist build
 for PYVER in ${PYTHONVERS} ; do
   "python${PYVER}" setup.py sdist bdist_wheel
