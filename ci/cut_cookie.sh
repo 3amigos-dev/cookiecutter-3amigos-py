@@ -15,6 +15,8 @@ fi
 OUTPUTDIR="${1}"
 if [ -d "${OUTPUTDIR}" ] ; then
     cd "${OUTPUTDIR}" 
+    # Fix relative links
+    OUTPUTDIR=$(pwd)
     if [ $(git status -s | wc -l) -ne 0 ] ; then
         echo 'Modified Files exist in target - aborting!' >&2
         exit 1
