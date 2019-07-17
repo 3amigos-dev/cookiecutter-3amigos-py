@@ -15,6 +15,8 @@ fi
 OUTPUTDIR="${1}"
 if [ -d "${OUTPUTDIR}" ] ; then
     cd "${OUTPUTDIR}" 
+    # Fix relative links
+    OUTPUTDIR=$(pwd)
     if [ $(git status -s | wc -l) -ne 0 ] ; then
         echo 'Modified Files exist in target - aborting!' >&2
         exit 1
@@ -33,6 +35,6 @@ cd "${BASEDIR}"
 docker_compose_run app "/workspace/ci/in_docker/cut_cookie.sh"
 cd "${BASEDIR}/output/"*
 find . -maxdepth 1 -mindepth 1 -exec cp -r \{\} "${OUTPUTDIR}" \;
-if [ -e "${OUTPUTDIR}/orig_cookiecutter.json" ] ; then
+if [ -e "${BASEDIR}/orig_cookiecutter.json" ] ; then
     mv "${BASEDIR}/orig_cookiecutter.json" "${BASEDIR}/cookiecutter.json" 
 fi
