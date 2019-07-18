@@ -1,3 +1,7 @@
+md
+noqa
 nosec
 pylint
-{{ cookiecutter.py_modulename }}
+README
+sexualized
+socio
