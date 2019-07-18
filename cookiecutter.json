@@ -16,5 +16,6 @@
     "author_name": "name_goes_here",
     "maintainer_name": "{{ cookiecutter.author_name }}",
     "maintainer_email": "{{ cookiecutter.author_email }}",
-    "project_email": "{{ cookiecutter.maintainer_email }}"
+    "project_email": "{{ cookiecutter.maintainer_email }}",
+    "dictionary": "en_AU"
 }

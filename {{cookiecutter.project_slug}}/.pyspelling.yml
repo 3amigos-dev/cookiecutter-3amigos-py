@@ -28,7 +28,7 @@ matrix:
   sources:
   - ./**/*.py
   hunspell:
-    d: docs/src/dictionary/hunspell/en_US
+    d: docs/src/dictionary/hunspell/{{ cookiecutter.dictionary }}
   aspell:
     lang: en
   dictionary:
