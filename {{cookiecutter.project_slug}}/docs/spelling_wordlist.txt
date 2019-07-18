@@ -1,0 +1,7 @@
+md
+noqa
+nosec
+pylint
+README
+sexualized
+socio
