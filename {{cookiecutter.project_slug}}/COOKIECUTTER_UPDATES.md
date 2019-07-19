@@ -6,16 +6,18 @@ so that it is clear what upstream updates have already been applied to
 consider application of new updates.
 
 # Updates from the Cookiecutter Template
-* Use an (Azure Pipelines)[https://azure.microsoft.com/en-au/services/devops/pipelines/] CI
-* Follow (3Amigos)[https://3amigos-dev.github.io/] to use CI container pattern
-* Use (pyspelling)[https://github.com/facelessuser/pyspelling] to check spelling in CI
-* Use (flake8)[https://github.com/PyCQA/flake8] for Static Code Analysis
-* Use (bandit)[https://github.com/PyCQA/bandit] for Security Static Analysis 
-* Use (pylint)[https://github.com/PyCQA/pylint] for Static Code Analysis
-* Use (isort)[https://github.com/timothycrosley/isort] for sorting imports
-* Use (towncrier)[https://github.com/hawkowl/towncrier] for news updates
-
-# TODO
-Update setup.py to find packages
-Add dlint
-Add python safety
+* Use an (Azure Pipelines)[https://azure.microsoft.com/en-au/services/devops/pipelines/] CI.
+* Follow (3Amigos)[https://3amigos-dev.github.io/] to use CI container pattern.
+* Use (pyspelling)[https://github.com/facelessuser/pyspelling] to check spelling in CI.
+* Use (flake8)[https://github.com/PyCQA/flake8] for static code analysis.
+* Use (bandit)[https://github.com/PyCQA/bandit] for security static analysis. 
+* Use (pylint)[https://github.com/PyCQA/pylint] for static code analysis.
+* Use (isort)[https://github.com/timothycrosley/isort] for sorting imports.
+* Use (towncrier)[https://github.com/hawkowl/towncrier] for news updates.
+* Use (dlint)[https://github.com/duo-labs/dlint] for security static analysis.
+* Use (safety)[https://github.com/pyupio/safety] to check package safety.
+* Locate packages excluding tests using setuptools.find\_packages.
+* Use (pytest)[https://github.com/pytest-dev/pytest/] for unit testing.
+* Use (pytest-cov)[https://github.com/pytest-dev/pytest-cov] to check 100% unit test coverage.
+* Use (pytest-xdist)[https://github.com/pytest-dev/pytest-xdist] for test parallelization.
+* Use (pytest-azurepipelines)[https://github.com/tonybaloney/pytest-azurepipelines] to publish tests results and coverage to Azure Pipelines Artifacts.

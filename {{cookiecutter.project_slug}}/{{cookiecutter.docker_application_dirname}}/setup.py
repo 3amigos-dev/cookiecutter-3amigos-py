@@ -10,7 +10,7 @@ import os
 import re
 
 # External Imports
-from setuptools import setup
+from setuptools import find_packages, setup
 
 PACKAGE_NAME = '{{ cookiecutter.py_modulename }}'
 
@@ -62,7 +62,7 @@ setup(
     author_email='{{ cookiecutter.author_email }}',
     maintainer='{{ cookiecutter.maintainer_name }}',
     maintainer_email='{{ cookiecutter.maintainer_email }}',
-    packages=[PACKAGE_NAME],
+    packages=find_packages(exclude=['tests']),
     license='GPLv3+',
     description=(
         '{{ cookiecutter.project_description }}'
