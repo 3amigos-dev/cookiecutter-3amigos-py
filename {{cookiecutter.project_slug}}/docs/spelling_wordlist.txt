@@ -1,7 +1,13 @@
+cookiecutter
+dlint
+isort
 md
 noqa
 nosec
+py
 pylint
+pyspelling
 README
 sexualized
 socio
+towncrier
