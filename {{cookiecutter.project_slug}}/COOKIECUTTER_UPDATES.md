@@ -21,3 +21,4 @@ consider application of new updates.
 * Use (pytest-cov)[https://github.com/pytest-dev/pytest-cov] to check 100% unit test coverage.
 * Use (pytest-xdist)[https://github.com/pytest-dev/pytest-xdist] for test parallelization.
 * Use (pytest-azurepipelines)[https://github.com/tonybaloney/pytest-azurepipelines] to publish tests results and coverage to Azure Pipelines Artifacts.
+* Use (resplendent)[https://github.com/resplendent-dev/resplendent] to spell check reStructuredText in pyspelling.

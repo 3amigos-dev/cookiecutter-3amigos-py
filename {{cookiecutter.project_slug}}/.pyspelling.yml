@@ -1,6 +1,29 @@
 spellchecker: aspell
 
 matrix:
+- name: restructedtext
+  sources:
+  - ./**/*.rst
+  hunspell:
+    d: docs/spelling_wordlist.txt
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - docs/spelling_wordlist.txt
+    output: build/dictionary/restructured.dic
+  pipeline:
+  - resplendent.filters.restructuredtext:
+  - pyspelling.filters.html:
+      comments: false
+      attributes:
+      - title
+      - alt
+      ignores:
+      - code
+      - pre
+  - pyspelling.filters.url:
+
 - name: markdown
   sources:
   - ./**/*.md
