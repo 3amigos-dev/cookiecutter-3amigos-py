@@ -13,7 +13,7 @@ matrix:
     - docs/spelling_wordlist.txt
     output: build/dictionary/restructured.dic
   pipeline:
-  - resplendent.filters.restructedtext:
+  - resplendent.filters.restructuredtext:
   - pyspelling.filters.html:
       comments: false
       attributes:
