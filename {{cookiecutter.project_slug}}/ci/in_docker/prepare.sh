@@ -10,3 +10,5 @@ cp "${BASEDIR}/LICENSE" "${BASEDIR}/{{ cookiecutter.docker_application_dirname }
 
 MAIN_MODULE="{{ cookiecutter.py_modulename }}"
 MODULES=( "${MAIN_MODULE}" "tests" )
+export MODULES
+export MAIN_MODULE

@@ -5,6 +5,7 @@ set -euxo pipefail
 THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASEDIR="$( dirname "${THISDIR}" )"
 
+# shellcheck source=/dev/null
 source "${BASEDIR}/ci/shared/_docker_helper.sh"
 
 # Remove any old content
