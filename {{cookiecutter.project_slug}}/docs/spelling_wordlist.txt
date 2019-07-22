@@ -1,11 +1,16 @@
 azurepipelines
+backlink
 cookiecutter
 CookieCutter
 cov
+css
 dev
 dlint
+genindex
+html
 isort
 md
+modindex
 noqa
 nosec
 parallelization
@@ -13,12 +18,14 @@ py
 pylint
 pyspelling
 pytest
+rc
 README
 reStructuredText
 setuptools
 sexualized
 shellcheck
 socio
+toctree
 towncrier
 xdist
 {{ cookiecutter.project_name }}
