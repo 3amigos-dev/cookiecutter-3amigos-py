@@ -27,4 +27,4 @@ consider application of new updates.
 * Badges for (PyPi)[https://pypi.org/], (ReadTheDocs)[https://readthedocs.org/] and (Azure Pipelines)[https://azure.microsoft.com/en-au/services/devops/pipelines/].
 
 # Minor Updates
-* Nicer python __main__ default behaviour.
+* Configurable code coverage minimum.
