@@ -1,7 +1,9 @@
 azurepipelines
 backlink
+Bugfixes
 cookiecutter
 CookieCutter
+{{ cookiecutter.project_name }}
 cov
 css
 dev
@@ -22,7 +24,9 @@ pytest
 rc
 README
 ReadTheDocs
+resplendent
 reStructuredText
+rst
 setuptools
 sexualized
 shellcheck
@@ -30,5 +34,5 @@ socio
 toctree
 towncrier
 txt
+unicode
 xdist
-{{ cookiecutter.project_name }}
