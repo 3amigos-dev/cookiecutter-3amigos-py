@@ -79,8 +79,8 @@ setup(
     classifiers=[elem for elem in [
         'Development Status :: 4 - Beta',
         'Programming Language :: Python',
-        '{{ cookiecutter.classifier_pytwo }}', 'Programming Language :: Python :: 2',
-        '{{ cookiecutter.classifier_pytwoseven }}', 'Programming Language :: Python :: 2.7',
+        '{{ cookiecutter.classifier_pytwo }}',
+        '{{ cookiecutter.classifier_pytwoseven }}',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
