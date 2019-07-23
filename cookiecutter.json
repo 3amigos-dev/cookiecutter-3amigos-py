@@ -23,5 +23,6 @@
     "maintainer_email": "{{ cookiecutter.author_email }}",
     "project_email": "{{ cookiecutter.maintainer_email }}",
     "app_requirements": "",
+    "cov_fail_under": "100",
     "dictionary": "en_AU"
 }
