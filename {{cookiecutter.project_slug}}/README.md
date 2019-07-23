@@ -8,6 +8,7 @@
 [![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.readthedocs_name }}/badge/?version=latest)](https://{{ cookiecutter.readthedocs_name }}.readthedocs.io/en/latest/?badge=latest)
 
 # Additional Documentation:
+* [Online Documentation](https://{{ cookiecutter.readthedocs_name }}.readthedocs.io/en/latest/)
 * [News](NEWS.rst).
 * [Template Updates](COOKIECUTTER_UPDATES.md).
 * [Code of Conduct](CODE_OF_CONDUCT.md).
