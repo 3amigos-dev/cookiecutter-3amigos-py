@@ -28,17 +28,25 @@ if [ -e "${OUTPUTDIR}/cookiecutter.json" ] ; then
     cp "${BASEDIR}/cookiecutter.json" "${BASEDIR}/orig_cookiecutter.json"
     cp "${OUTPUTDIR}/cookiecutter.json" "${BASEDIR}"
 fi
+function finish() {
+    if [ -e "${BASEDIR}/orig_cookiecutter.json" ] ; then
+        mv "${BASEDIR}/orig_cookiecutter.json" "${BASEDIR}/cookiecutter.json" 
+    fi
+}
+trap finish EXIT
 
 # Remove any old content
 rm -rf "${BASEDIR}/output"
 
 cd "${BASEDIR}"
-docker_compose_run app "/workspace/ci/in_docker/cut_cookie.sh"
+if ! docker_compose_run app "/workspace/ci/in_docker/cut_cookie.sh" ; then
+    echo 'Cookie Template Failed! Restoring...'
+    cd "${OUTPUTDIR}"
+    git checkout -- .
+    exit 1
+fi
 cd "${BASEDIR}/output/"*
 find . -maxdepth 1 -mindepth 1 -exec cp -r \{\} "${OUTPUTDIR}" \;
-if [ -e "${BASEDIR}/orig_cookiecutter.json" ] ; then
-    mv "${BASEDIR}/orig_cookiecutter.json" "${BASEDIR}/cookiecutter.json" 
-fi
 if [ -e "${OUTPUTDIR}/hooks/post_gen_project.sh" ] ; then
     "${OUTPUTDIR}/hooks/post_gen_project.sh"
 fi
