@@ -1,2 +1,1 @@
-{% for element in cookiecutter.application_requirements %}{{ element }}
-{% endfor %}
+{{ cookiecutter.app_requirements }}
