@@ -17,6 +17,7 @@
     "build_url": "build_url_here",
     "pypi_name": "{{ cookiecutter.project_name }}",
     "readthedocs_name": "{{ cookiecutter.project_name }}",
+    "app_requirements": [],
     "author_email": "email_goes_here",
     "author_name": "name_goes_here",
     "maintainer_name": "{{ cookiecutter.author_name }}",
