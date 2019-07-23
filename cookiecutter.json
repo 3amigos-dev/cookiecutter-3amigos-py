@@ -24,7 +24,7 @@
     "project_email": "{{ cookiecutter.maintainer_email }}",
     "azure_buildid": "azure_build_goes_here",
     "azure_user": "azure_user_goes_here",
-    "azure_project": "{{ cookiecutter.azure_user }}",
+    "azure_project": "azure_project_goes_here",
     "build_status_url": "https://dev.azure.com/{{ cookiecutter.azure_user }}/{{ cookiecutter.azure_project }}/_apis/build/status/{{ cookiecutter.github_org }}.{{ cookiecutter.github_repo }}?branchName=master",
     "build_url": "https://dev.azure.com/{{ cookiecutter.azure_user }}/{{ cookiecutter.azure_project }}/_build/latest?definitionId={{ cookiecutter.azure_buildid }}&branchName=master",
     "pypi_name": "{{ cookiecutter.project_name }}",
