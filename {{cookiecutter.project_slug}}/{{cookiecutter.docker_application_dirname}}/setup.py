@@ -72,7 +72,7 @@ setup(
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
     install_requires=[
         elem for elem in
-        '{{ cookiecutter.app_requirements }}'.split('\n')
+        '{{ cookiecutter.app_requirements|replace('\n', '\\n') }}'.split('\n')
         if elem
     ],
     url='{{ cookiecutter.project_url }}',
