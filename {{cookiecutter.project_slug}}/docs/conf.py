@@ -35,8 +35,8 @@ def read_version():
     file_path = os.path.join(
         '..',
         '{{ cookiecutter.docker_application_dirname }}',
-        '{{ cookiecutter.py_modulename }}'
-        'version.py'
+        '{{ cookiecutter.py_modulename }}',
+        'version.py',
     )
     regex = re.compile('__version__ = [\'\"]([^\'\"]*)[\'\"]')
     with codecs.open(file_path, encoding='utf-8') as fobj:
