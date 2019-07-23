@@ -22,7 +22,7 @@ if [ -d "${OUTPUTDIR}" ] ; then
         echo 'Modified Files exist in target - aborting!' >&2
         exit 1
     fi
-    find . -maxdepth 1 -mindepth 1 -a ! -ipath ./.git -a ! -ipath ./cookiecutter.json -exec rm -rf \{\} \;
+    find . -maxdepth 1 -mindepth 1 -a ! -ipath ./.git -a ! -ipath ./hooks -a ! -ipath ./cookiecutter.json -exec rm -rf \{\} \;
 fi
 if [ -e "${OUTPUTDIR}/cookiecutter.json" ] ; then
     cp "${BASEDIR}/cookiecutter.json" "${BASEDIR}/orig_cookiecutter.json"
@@ -38,4 +38,7 @@ cd "${BASEDIR}/output/"*
 find . -maxdepth 1 -mindepth 1 -exec cp -r \{\} "${OUTPUTDIR}" \;
 if [ -e "${BASEDIR}/orig_cookiecutter.json" ] ; then
     mv "${BASEDIR}/orig_cookiecutter.json" "${BASEDIR}/cookiecutter.json" 
+fi
+if [ -e "${OUTPUTDIR}/hooks/post_gen_project.sh" ] ; then
+    "${OUTPUTDIR}/hooks/post_gen_project.sh"
 fi

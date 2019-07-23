@@ -1,4 +1,5 @@
 FROM 3amigos/pipenv-all:latest
+ENV PYTHONVERS "{{ cookiecutter.python_versions }}"
 COPY install.sh /build/install.sh
 COPY pip /build/pip
 RUN /build/install.sh

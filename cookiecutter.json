@@ -1,5 +1,6 @@
 {
     "project_name":  "resplendent",
+    "python_versions": "2.7 3.4 3.5 3.6 3.7",
     "project_long_name": "{{ cookiecutter.project_name }}",
     "project_description": "A reStructuredText plugin filter for pyspelling to check spelling errors in reStructuredText during CI checks.",
     "project_long_description": "{{ cookiecutter.project_description }}",
