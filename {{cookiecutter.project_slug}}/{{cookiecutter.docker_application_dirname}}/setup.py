@@ -76,11 +76,11 @@ setup(
         if elem
     ],
     url='{{ cookiecutter.project_url }}',
-    classifiers=[
+    classifiers=[elem for elem in [
         'Development Status :: 4 - Beta',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
+        '{{ cookiecutter.classifier_pytwo }}', 'Programming Language :: Python :: 2',
+        '{{ cookiecutter.classifier_pytwoseven }}', 'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
@@ -90,5 +90,5 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Operating System :: OS Independent',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-    ],
+    ] if elem],
 )
