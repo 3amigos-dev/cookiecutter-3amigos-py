@@ -29,5 +29,6 @@ shellcheck
 socio
 toctree
 towncrier
+txt
 xdist
 {{ cookiecutter.project_name }}
