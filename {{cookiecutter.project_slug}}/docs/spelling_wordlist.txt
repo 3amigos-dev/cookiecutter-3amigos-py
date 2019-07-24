@@ -1,4 +1,5 @@
 args
+automodule
 azurepipelines
 backlink
 Bugfixes
@@ -37,9 +38,11 @@ setuptools
 sexualized
 shellcheck
 socio
+Submodules
 toctree
 towncrier
 txt
+unanimous
 unicode
 xdist
 xml
