@@ -1,5 +1,4 @@
 # {{ cookiecutter.project_long_name }}
-{{ cookiecutter.project_long_description }}
 
 [![Travis Status]({{ cookiecutter.travis_status_url }})]({{ cookiecutter.travis_build_url }})
 [![Azure Status]({{ cookiecutter.build_status_url }})]({{ cookiecutter.build_url }})
@@ -9,7 +8,21 @@
 [![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.readthedocs_name }}/badge/?version=latest)](https://{{ cookiecutter.readthedocs_name }}.readthedocs.io/en/latest/?badge=latest)
 [![Coverage Status](https://coveralls.io/repos/github/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/badge.svg)](https://coveralls.io/github/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/)
 
+{{ cookiecutter.project_long_description }}
+
+# Available from PyPi.org
+
+https://pypi.org/project/{{ cookiecutter.pypi_name }}/
+
+# Install
+
+This library can be installed in (Python)[https://www.python.org/] via
+(Pip)[https://pypi.org/].
+
+> pip install {{ cookiecutter.pypi_name }}
+
 # Additional Documentation:
+
 * [Online Documentation](https://{{ cookiecutter.readthedocs_name }}.readthedocs.io/en/latest/)
 * [News](NEWS.rst).
 * [Template Updates](COOKIECUTTER_UPDATES.md).
