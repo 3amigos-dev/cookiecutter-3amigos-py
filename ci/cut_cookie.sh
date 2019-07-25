@@ -13,11 +13,38 @@ if ! which git ; then
     exit 1
 fi
 
+RESET="NO"
+POSITIONAL=()
+
+##################################
+# Parsing Command line arguments
+#################################
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    -r|--reset)
+    shift # past argument
+    RESET="YES"
+    ;;
+    *)    # unknown option
+    POSITIONAL+=("$1") # save it in an array for later
+    shift # past argument
+    ;;
+esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
 OUTPUTDIR="${1}"
 if [ -d "${OUTPUTDIR}" ] ; then
     cd "${OUTPUTDIR}" 
     # Fix relative links
     OUTPUTDIR=$(pwd)
+    if [ "${RESET}" == "YES" ] ; then
+        git checkout -- .
+        git clean -f -d
+    fi
     if [ "$(git status -s | wc -l)" -ne 0 ] ; then
         echo 'Modified Files exist in target - aborting!' >&2
         exit 1
