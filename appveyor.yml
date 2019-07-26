@@ -1,0 +1,10 @@
+image: ubuntu
+
+services:
+- docker
+
+test_script:
+- bash ci.sh
+
+build: off
+-
