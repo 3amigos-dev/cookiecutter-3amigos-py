@@ -69,7 +69,7 @@ setup(
     ),
     long_description=load_readme('README.md'),
     long_description_content_type='text/markdown',
-    python_requires='{{ cookiecutter.python_requires }}',
+    python_requires={% if cookiecutter.supports_pytwo == "yes" %}">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"{% else %}">=3.4"{% endif %},
     install_requires=[
         elem for elem in
         '{{ cookiecutter.app_requirements|replace('\n', '\\n') }}'.split('\n')
@@ -78,9 +78,9 @@ setup(
     url='{{ cookiecutter.project_url }}',
     classifiers=[elem for elem in [
         'Development Status :: 4 - Beta',
-        'Programming Language :: Python',
-        '{{ cookiecutter.classifier_pytwo }}',
-        '{{ cookiecutter.classifier_pytwoseven }}',
+        'Programming Language :: Python',{% if cookiecutter.supports_pytwo == "yes" %}
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',{% endif %}
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
