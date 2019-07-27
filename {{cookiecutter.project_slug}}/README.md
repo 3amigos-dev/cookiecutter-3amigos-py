@@ -22,9 +22,18 @@ from [PyPI](https://pypi.org/).
 $ pip install {{ cookiecutter.pypi_name }}
 ```
 
-# Download from PyPI.org
+{{ cookiecutter.installation_notes }}
+
+{% if cookiecutter.app_requirements %}
+## Prerequisites:
+- {{ cookiecutter.app_requirements|replace('\n', '\n - ') }}
+{% endif %}
+
+## Download from PyPI.org
 
 https://pypi.org/project/{{ cookiecutter.pypi_name }}/
+
+{{ cookiecutter.extended_readme }}
 
 # Contributing
 
