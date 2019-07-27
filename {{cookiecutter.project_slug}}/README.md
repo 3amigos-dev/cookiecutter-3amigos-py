@@ -30,7 +30,7 @@ https://pypi.org/project/{{ cookiecutter.pypi_name }}/
 
 Contributions are very welcome, consider using the
 [file an issue](https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/issues)
-to discuss the work before begining, but if you already have a Pull Request
+to discuss the work before beginning, but if you already have a Pull Request
 ready then this is no problem, please submit it and it will be very gratefully
 considered. The [Contribution Guidelines](CONTRIBUTING.md)
 outlines the {{ cookiecutter.community_name }} commitment to ensuring all
