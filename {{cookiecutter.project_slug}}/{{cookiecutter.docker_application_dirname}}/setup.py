@@ -63,13 +63,13 @@ setup(
     maintainer='{{ cookiecutter.maintainer_name }}',
     maintainer_email='{{ cookiecutter.maintainer_email }}',
     packages=find_packages(exclude=['tests']),
-    license='GPLv3+',
+    license='{{ cookiecutter.license }}',
     description=(
         '{{ cookiecutter.project_description }}'
     ),
     long_description=load_readme('README.md'),
     long_description_content_type='text/markdown',
-    python_requires='{{ cookiecutter.python_requires }}',
+    python_requires={% if cookiecutter.supports_pytwo == "yes" %}">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"{% else %}">=3.4"{% endif %},
     install_requires=[
         elem for elem in
         '{{ cookiecutter.app_requirements|replace('\n', '\\n') }}'.split('\n')
@@ -78,9 +78,9 @@ setup(
     url='{{ cookiecutter.project_url }}',
     classifiers=[elem for elem in [
         'Development Status :: 4 - Beta',
-        'Programming Language :: Python',
-        '{{ cookiecutter.classifier_pytwo }}',
-        '{{ cookiecutter.classifier_pytwoseven }}',
+        'Programming Language :: Python',{% if cookiecutter.supports_pytwo == "yes" %}
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',{% endif %}
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
@@ -89,6 +89,6 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Operating System :: OS Independent',
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+        'License :: OSI Approved :: {% if cookiecutter.license == "GPLv3+"%}GNU General Public License v3 (GPLv3){% elif cookiecutter.license == "MIT" %}MIT License{% endif %}',
     ] if elem],
 )
