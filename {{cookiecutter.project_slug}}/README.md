@@ -13,10 +13,10 @@
 
 # Installation
 
-You can install {{ cookiecutter.project_name }} for
-(Python)[https://www.python.org/] via
-(pip)[https://pypi.org/project/pip/]
-from (PyPI)[https://pypi.org/].
+You can install {{ cookiecutter.project_slug }} for
+[Python](https://www.python.org/) via
+[pip](https://pypi.org/project/pip/)
+from [PyPI](https://pypi.org/).
 
 ```
 $ pip install {{ cookiecutter.pypi_name }}
@@ -29,27 +29,27 @@ https://pypi.org/project/{{ cookiecutter.pypi_name }}/
 # Contributing
 
 Contributions are very welcome, consider using the
-(file an issue)[https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/issues]
+[file an issue](https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/issues)
 to discuss the work before begining, but if you already have a Pull Request
 ready then this is no problem, please submit it and it will be very gratefully
-considered. The (Contribution Guidelines)[CONTRIBUTING.md]
+considered. The [Contribution Guidelines](CONTRIBUTING.md)
 outlines the {{ cookiecutter.community_name }} commitment to ensuring all
 contributions receive appropriate recognition.
 
 # License
 
 {% if cookiecutter.license == 'GPLv3' %}
-Distributed under the terms of the (GPLv3)[https://opensource.org/licenses/GPL-3.0]
+Distributed under the terms of the [GPLv3](https://opensource.org/licenses/GPL-3.0)
 license, "{{ cookiecutter.project_name }}" is free and open source software
 {% elif cookiecutter.license == 'MIT' %}
-Distributed under the terms of the (MIT)[http://opensource.org/licenses/MIT]
+Distributed under the terms of the [MIT](http://opensource.org/licenses/MIT)
 license, "{{ cookiecutter.project_name }}" is free and open source software
 {% endif %}
 
 # Issues
 
 If you encounter any problems, please 
-(file an issue)[https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/issues]
+[file an issue](https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/issues)
 along with a detailed description.
 
 # Additional Documentation:
