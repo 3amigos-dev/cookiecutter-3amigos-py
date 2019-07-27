@@ -26,7 +26,7 @@ $ pip install {{ cookiecutter.pypi_name }}
 
 {% if cookiecutter.app_requirements %}
 ## Prerequisites:
-- {{ cookiecutter.app_requirements|replace('\n', '\n - ') }}
+- {{ cookiecutter.app_requirements|replace('\n', '\n- ') }}
 {% endif %}
 
 ## Download from PyPI.org
