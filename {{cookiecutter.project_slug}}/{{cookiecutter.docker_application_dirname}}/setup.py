@@ -63,7 +63,7 @@ setup(
     maintainer='{{ cookiecutter.maintainer_name }}',
     maintainer_email='{{ cookiecutter.maintainer_email }}',
     packages=find_packages(exclude=['tests']),
-    license='GPLv3+',
+    license='{{ cookiecutter.license }}',
     description=(
         '{{ cookiecutter.project_description }}'
     ),
@@ -89,6 +89,6 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Operating System :: OS Independent',
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+        'License :: OSI Approved :: {% if cookiecutter.license == "GPLv3+"%}GNU General Public License v3 (GPLv3){% else %}MIT{% elif cookiecutter.license == "MIT" %}MIT License{% endif %}',
     ] if elem],
 )
