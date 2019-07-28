@@ -21,8 +21,10 @@ CLI
 cobertura
 config
 conftest
+contrib
 cookiecutter
 CookieCutter
+{{ cookiecutter.project_name }}
 cov
 css
 datetime
@@ -74,7 +76,9 @@ PRTGApi
 PRTGDevice
 PRTGSensor
 py
+PyEnchant
 pylint
+PyPi
 PyPI
 pyruncompare
 pyspelling
@@ -87,6 +91,7 @@ README
 ReadTheDocs
 repr
 resplendent
+restructuredtext
 reStructuredText
 rootid
 rst
@@ -113,10 +118,10 @@ ul
 unanimous
 undoc
 unicode
+unmaintained
 urls
 utf
 webgui
 xdist
 xml
 yyyy
-{{ cookiecutter.project_name }}
