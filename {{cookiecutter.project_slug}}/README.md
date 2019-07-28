@@ -57,7 +57,7 @@ license, "{{ cookiecutter.project_name }}" is free and open source software
 
 # Issues
 
-If you encounter any problems, please 
+If you encounter any problems, please
 [file an issue](https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/issues)
 along with a detailed description.
 
