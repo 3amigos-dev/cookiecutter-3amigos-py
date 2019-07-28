@@ -13,14 +13,16 @@ beautifulsoup
 BeautifulSoup
 bs
 Bugfixes
+buildkite
+BuildKite
 byid
 charset
 CLI
 cobertura
 config
+conftest
 cookiecutter
 CookieCutter
-{{ cookiecutter.project_name }}
 cov
 css
 datetime
@@ -62,6 +64,7 @@ param
 params
 passhash
 pipefish
+plumbum
 pre
 probeobject
 prtg
@@ -76,6 +79,7 @@ pyruncompare
 pyspelling
 pytest
 Pytest
+pytest-buildkite
 quickstart
 rc
 README
@@ -98,6 +102,7 @@ submodules
 Submodules
 sys
 tcp
+testsuite
 th
 toctree
 towncrier
@@ -113,3 +118,4 @@ webgui
 xdist
 xml
 yyyy
+{{ cookiecutter.project_name }}
