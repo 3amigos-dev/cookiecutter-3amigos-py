@@ -34,6 +34,7 @@ deviceobject
 dlint
 docopt
 DOCTYPE
+docutils
 exename
 genindex
 hh
