@@ -41,6 +41,17 @@ if [ -d "${OUTPUTDIR}" ] ; then
     cd "${OUTPUTDIR}" 
     # Fix relative links
     OUTPUTDIR=$(pwd)
+    rm -f "${BASEDIR}/target_cookiecutter.json"
+    if [ -e "${OUTPUTDIR}/cookiecutter.json" ] ; then
+        cp "${OUTPUTDIR}/cookiecutter.json" "${BASEDIR}/target_cookiecutter.json"
+    fi
+    function finish_target() {
+        if [ -e "${BASEDIR}/target_cookiecutter.json" ] ; then
+            mv "${BASEDIR}/target_cookiecutter.json" "${OUTPUTDIR}/cookiecutter.json"
+        fi
+    }
+    trap finish_target EXIT
+    git checkout -- cookiecutter.json
     if [ "${RESET}" == "YES" ] ; then
         git checkout -- .
         git clean -f -d
@@ -48,6 +59,9 @@ if [ -d "${OUTPUTDIR}" ] ; then
     if [ "$(git status -s | wc -l)" -ne 0 ] ; then
         echo 'Modified Files exist in target - aborting!' >&2
         exit 1
+    fi
+    if [ -e "${BASEDIR}/target_cookiecutter.json" ] ; then
+        mv "${BASEDIR}/target_cookiecutter.json" "${OUTPUTDIR}/cookiecutter.json"
     fi
     find . -maxdepth 1 -mindepth 1 -a ! -ipath ./.git -a ! -ipath ./hooks -a ! -ipath ./cookiecutter.json -exec rm -rf \{\} \;
 fi
