@@ -47,7 +47,7 @@ contributions receive appropriate recognition.
 
 # License
 
-{% if cookiecutter.license == 'GPLv3' %}
+{% if cookiecutter.license == 'GPLv3+' %}
 Distributed under the terms of the [GPLv3](https://opensource.org/licenses/GPL-3.0)
 license, "{{ cookiecutter.project_name }}" is free and open source software
 {% elif cookiecutter.license == 'MIT' %}
