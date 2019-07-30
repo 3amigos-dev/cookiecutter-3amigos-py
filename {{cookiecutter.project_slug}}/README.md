@@ -11,6 +11,9 @@
 
 {{ cookiecutter.project_long_description }}
 
+More details can be found in the
+[Online Documentation.](https://{{ cookiecutter.readthedocs_name }}.readthedocs.io/en/latest/)
+
 # Installation
 
 You can install {{ cookiecutter.project_slug }} for
