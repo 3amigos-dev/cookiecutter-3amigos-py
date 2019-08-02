@@ -57,7 +57,15 @@ if [ -d "${OUTPUTDIR}" ] ; then
         git clean -f -d
     fi
     if [ "$(git status -s | wc -l)" -ne 0 ] ; then
+        set +x
+        echo '-----------'
+        echo '-----------'
+        echo '-----------'
         echo 'Modified Files exist in target - aborting!' >&2
+        git status -s >&2
+        echo '-----------'
+        echo '-----------'
+        echo '-----------'
         exit 1
     fi
     if [ -e "${BASEDIR}/target_cookiecutter.json" ] ; then
