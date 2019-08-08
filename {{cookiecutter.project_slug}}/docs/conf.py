@@ -13,12 +13,9 @@ Configuration file for the Sphinx documentation builder.
 import os
 import sys
 
-sys.path.insert(
-    0,
-    os.path.abspath(
-        os.path.join("..", "{{ cookiecutter.docker_application_dirname }}")
-    ),
-)
+appdirname = "{{ cookiecutter.docker_application_dirname }}"
+pyname = "{{ cookiecutter.py_modulename }}"
+sys.path.insert(0, os.path.abspath(os.path.join("..", appdirname)))
 
 
 # -- Project information -----------------------------------------------------
@@ -35,12 +32,7 @@ def read_version():
     import re
     import codecs
 
-    file_path = os.path.join(
-        "..",
-        "{{ cookiecutter.docker_application_dirname }}",
-        "{{ cookiecutter.py_modulename }}",
-        "version.py",
-    )
+    file_path = os.path.join("..", appdirname, pyname, "version.py")
     regex = re.compile("__version__ = ['\"]([^'\"]*)['\"]")
     with codecs.open(file_path, encoding="utf-8") as fobj:
         for line in fobj:
