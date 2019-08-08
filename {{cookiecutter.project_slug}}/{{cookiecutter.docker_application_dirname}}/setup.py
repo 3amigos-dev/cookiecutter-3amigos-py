@@ -16,9 +16,7 @@ PACKAGE_NAME = "{{ cookiecutter.py_modulename }}"
 URL = "{{ cookiecutter.project_url }}"
 GITHUB_ORG = "{{ cookiecutter.github_org }}"
 GITHUB_REPO = "{{ cookiecutter.github_repo }}"
-RE_SUB = "(https://github.com/%s/%s/blob/master/\\g<1>)" % (
-    GITHUB_ORG, GITHUB_REPO
-)
+RE_SUB = "(https://github.com/%s/%s/blob/master/\\g<1>)" % (GITHUB_ORG, GITHUB_REPO)
 
 def load_include(fname, transform=False):
     """
@@ -84,7 +82,7 @@ setup(
             "Programming Language :: Python :: Implementation :: CPython",
             "Programming Language :: Python :: Implementation :: PyPy",
             "Operating System :: OS Independent",
-            'License :: OSI Approved :: {% if cookiecutter.license == "GPLv3+"%}GNU General Public License v3 (GPLv3){% elif cookiecutter.license == "MIT" %}MIT License{% endif %}',
+            "License :: OSI Approved :: {% if cookiecutter.license == "GPLv3+"%}GNU General Public License v3 (GPLv3){% elif cookiecutter.license == "MIT" %}MIT License{% endif %}",
         ]
         if elem
     ],
