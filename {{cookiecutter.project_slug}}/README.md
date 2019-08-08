@@ -8,6 +8,7 @@
 [![PyPI downloads per month](https://img.shields.io/pypi/dm/{{ cookiecutter.pypi_name }}.svg)](https://pypi.org/project/{{ cookiecutter.pypi_name }})
 [![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.readthedocs_name }}/badge/?version=latest)](https://{{ cookiecutter.readthedocs_name }}.readthedocs.io/en/latest/?badge=latest)
 [![Coverage Status](https://coveralls.io/repos/github/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/badge.svg)](https://coveralls.io/github/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/)
+[![Black](https://camo.githubusercontent.com/28a51fe3a2c05048d8ca8ecd039d6b1619037326/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64652532307374796c652d626c61636b2d3030303030302e737667)](https://github.com/psf/black)
 
 {{ cookiecutter.project_long_description }}
 
