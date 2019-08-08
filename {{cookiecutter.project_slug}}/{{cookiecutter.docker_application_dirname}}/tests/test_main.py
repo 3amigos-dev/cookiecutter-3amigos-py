@@ -12,6 +12,7 @@ def test_main():
     """
     # Setup
     from {{ cookiecutter.py_modulename }}.__main__ import main
+
     # Exercise
     result = main()  # pylint: disable=assignment-from-no-return
     # Verify

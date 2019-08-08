@@ -14,7 +14,11 @@ from setuptools import find_packages, setup
 
 PACKAGE_NAME = "{{ cookiecutter.py_modulename }}"
 URL = "{{ cookiecutter.project_url }}"
-
+GITHUB_ORG = "{{ cookiecutter.github_org }}"
+GITHUB_REPO = "{{ cookiecutter.github_repo }}"
+RE_SUB = "(https://github.com/%s/%s/blob/master/\\g<1>)" % (
+    GITHUB_ORG, GITHUB_REPO
+)
 
 def load_include(fname, transform=False):
     """
@@ -25,14 +29,9 @@ def load_include(fname, transform=False):
         data = fobj.read()
         if not transform:
             return data
-        sub = (
-            "(https://github.com/"
-            "{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}"
-            "/blob/master/\\g<1>)"
-        )
-        markdown_fixed = re.sub("[(]([^)]*[.](?:md|rst))[)]", sub, data)
+        markdown_fixed = re.sub("[(]([^)]*[.](?:md|rst))[)]", RE_SUB, data)
         rst_fixed = re.sub(
-            "^[.][.] [_][`][^`]*[`][:] ([^)]*[.](?:md|rst))", sub, markdown_fixed
+            "^[.][.] [_][`][^`]*[`][:] ([^)]*[.](?:md|rst))", RE_SUB, markdown_fixed
         )
         return rst_fixed
 
