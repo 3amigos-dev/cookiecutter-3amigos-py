@@ -8,6 +8,7 @@ import os
 import sys
 
 import click
+import plumbum
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
@@ -43,23 +44,28 @@ def run_invocation(basedir):
         print("Not a directory: %s" % (basedir,))
         sys.exit(1)
     for subdir in os.listdir(basedir):
-        jsonpath = os.path.join(basedir, subdir, "cookiecutter.json")
+        subpath = os.path.join(basedir, subdir)
+        jsonpath = os.path.join(subpath, "cookiecutter.json")
         if os.path.isfile(jsonpath):
-            run_cut(jsonpath)
+            run_cut(subpath)
 
 
-def run_cut(jsonpath):
+def run_cut(path):
     """
     Run cookiecutter on the target
     """
-    print(jsonpath)
+    cishpath = os.path.join(get_cookiecut_basedir(), "ci.sh")
+    cish = plumbum.local[cishpath]
+    _ = cish["cut_cookie", path] & plumbum.FG
 
 
 def get_cookiecut_basedir():
     """
     Locate the current directory of this file
     """
-    return os.path.dirname(os.path.abspath(sys.modules[__name__].__file__))
+    thisdir = os.path.dirname(os.path.abspath(sys.modules[__name__].__file__))
+    basedir = os.path.dirname(thisdir)
+    return basedir
 
 
 if __name__ == "__main__":
