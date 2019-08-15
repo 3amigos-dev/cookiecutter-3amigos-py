@@ -8,6 +8,7 @@ import os
 import sys
 
 import click
+import git
 import plumbum
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
@@ -57,6 +58,9 @@ def run_cut(path):
     cishpath = os.path.join(get_cookiecut_basedir(), "ci.sh")
     cish = plumbum.local[cishpath]
     _ = cish["cut_cookie", path] & plumbum.FG
+    if git.Repo(path).is_dirty():
+        print('Modifications exist in {}'.format(path), file=sys.stderr)
+        sys.exit(1)
 
 
 def get_cookiecut_basedir():
