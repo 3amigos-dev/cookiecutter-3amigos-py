@@ -47,6 +47,10 @@ def run_invocation(basedir):
     for subdir in os.listdir(basedir):
         subpath = os.path.join(basedir, subdir)
         jsonpath = os.path.join(subpath, "cookiecutter.json")
+        ignorepath = os.path.join(subpath, ".cut_all_ignore")
+        if os.path.exists(ignorepath):
+            print("Ignoring: %s" % (subpath,))
+            continue
         if os.path.isfile(jsonpath):
             run_cut(subpath)
 

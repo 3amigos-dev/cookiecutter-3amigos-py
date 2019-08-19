@@ -114,3 +114,4 @@ cov.xml
 
 # CookieCutter
 output
+.cut_all_ignore
