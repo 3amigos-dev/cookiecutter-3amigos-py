@@ -86,5 +86,5 @@ setup(
             "License :: OSI Approved :: {% if cookiecutter.license == "GPLv3+"%}GNU General Public License v3 (GPLv3){% elif cookiecutter.license == "MIT" %}MIT License{% endif %}",
         ]
         if elem
-    ],
+    ],{{ cookiecutter.entry_points }}
 )
