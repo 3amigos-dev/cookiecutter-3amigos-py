@@ -4,6 +4,7 @@ Run cookiecutter over a series of directories applying updates into them.
 """
 from __future__ import absolute_import, division, print_function
 
+import json
 import os
 import sys
 
@@ -19,25 +20,27 @@ __version__ = "0.1"
 @click.group(context_settings=CONTEXT_SETTINGS, invoke_without_command=True)
 @click.version_option(version=__version__)
 @click.argument("basedir")
+@click.option("update", "-u", nargs=2, multiple=True)
 @click.pass_context
-def main(ctxt, basedir):
+def main(ctxt, basedir, update):
     """
     Main click group handler
     """
     if ctxt.invoked_subcommand is None:
-        run_invocation(basedir)
+        run_invocation(basedir, update)
 
 
 @main.command()
 @click.argument("basedir")
-def invoke(basedir):
+@click.option("update", "-u", nargs=2, multiple=True)
+def invoke(basedir, update):
     """
     Primary command handler
     """
-    run_invocation(basedir)
+    run_invocation(basedir, update)
 
 
-def run_invocation(basedir):
+def run_invocation(basedir, update):
     """
     Execute the invocation
     """
@@ -52,19 +55,37 @@ def run_invocation(basedir):
             print("Ignoring: %s" % (subpath,))
             continue
         if os.path.isfile(jsonpath):
-            run_cut(subpath)
+            run_cut(subpath, update)
 
 
-def run_cut(path):
+def run_cut(path, update):
     """
     Run cookiecutter on the target
     """
     cishpath = os.path.join(get_cookiecut_basedir(), "ci.sh")
+    check_update(path, update)
     cish = plumbum.local[cishpath]
     _ = cish["cut_cookie", path] & plumbum.FG
     if git.Repo(path).is_dirty():
-        print('Modifications exist in {}'.format(path), file=sys.stderr)
+        print("Modifications exist in {}".format(path), file=sys.stderr)
         sys.exit(1)
+
+
+def check_update(path, update):
+    """
+    Automatically record default values for missing keys
+    """
+    jsonpath = os.path.join(path, "cookiecutter.json")
+    with open(jsonpath, "r", encoding="utf-8") as fobj:
+        jsonobj = json.load(fobj)
+    updated = False
+    for key, val in update:
+        if key not in jsonobj:
+            jsonobj[key] = val
+            updated = True
+    if updated:
+        with open(jsonpath, "w", encoding="utf-8") as fobj:
+            json.dump(jsonobj, fobj, indent=4, sort_keys=True)
 
 
 def get_cookiecut_basedir():
