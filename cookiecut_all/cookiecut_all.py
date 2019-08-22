@@ -78,14 +78,18 @@ def check_update(path, update):
     jsonpath = os.path.join(path, "cookiecutter.json")
     with open(jsonpath, "r", encoding="utf-8") as fobj:
         jsonobj = json.load(fobj)
-    updated = False
-    for key, val in update:
-        if key not in jsonobj:
-            jsonobj[key] = val
-            updated = True
-    if updated:
+    update = [(key, val) for key, val in update if key not in jsonobj]
+    if update:
+        with open(jsonpath, "r", encoding="utf-8") as fobj:
+            lines = [line.rstrip("\r\n") for line in fobj]
+        lines = (
+            lines[:-1]
+            + ['    "%s": "%s"' % (key, val) for key, val in update]
+            + lines[-1:]
+        )
         with open(jsonpath, "w", encoding="utf-8") as fobj:
-            json.dump(jsonobj, fobj, indent=4, sort_keys=True)
+            for line in lines:
+                print(line, file=fobj)
 
 
 def get_cookiecut_basedir():
