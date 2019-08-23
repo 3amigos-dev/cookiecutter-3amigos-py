@@ -56,6 +56,7 @@ def run_invocation(basedir, update):
             continue
         if os.path.isfile(jsonpath):
             run_cut(subpath, update)
+    print('All done.')
 
 
 def run_cut(path, update):
@@ -83,7 +84,8 @@ def check_update(path, update):
         with open(jsonpath, "r", encoding="utf-8") as fobj:
             lines = [line.rstrip("\r\n") for line in fobj]
         lines = (
-            lines[:-1]
+            lines[:-2]
+            + [lines[-2] + ',']
             + ['    "%s": "%s"' % (key, val) for key, val in update]
             + lines[-1:]
         )
