@@ -44,5 +44,6 @@
         "MIT"
     ],
     "entry_points": "",
-    "package_data": ""
+    "package_data": "",
+    "extra_manifest": ""
 }
