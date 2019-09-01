@@ -86,7 +86,8 @@ def check_update(path, update):
         lines = (
             lines[:-2]
             + [lines[-2] + ',']
-            + ['    "%s": "%s"' % (key, val) for key, val in update]
+            + ['    "%s": "%s",' % (key, val) for key, val in update[:-1]]
+            + ['    "%s": "%s"' % (key, val) for key, val in update[-1:]]
             + lines[-1:]
         )
         with open(jsonpath, "w", encoding="utf-8") as fobj:
