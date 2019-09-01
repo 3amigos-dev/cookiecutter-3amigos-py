@@ -83,8 +83,10 @@ def check_update(path, update):
         with open(jsonpath, "r", encoding="utf-8") as fobj:
             lines = [line.rstrip("\r\n") for line in fobj]
         lines = (
-            lines[:-1]
-            + ['    "%s": "%s"' % (key, val) for key, val in update]
+            lines[:-2]
+            + [lines[-2] + ',']
+            + ['    "%s": "%s",' % (key, val) for key, val in update[:-1]]
+            + ['    "%s": "%s"' % (key, val) for key, val in update[-1:]]
             + lines[-1:]
         )
         with open(jsonpath, "w", encoding="utf-8") as fobj:
