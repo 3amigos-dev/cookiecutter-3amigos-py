@@ -56,6 +56,7 @@ def run_invocation(basedir, update):
             continue
         if os.path.isfile(jsonpath):
             run_cut(subpath, update)
+    print('All done.')
 
 
 def run_cut(path, update):
