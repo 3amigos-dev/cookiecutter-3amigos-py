@@ -58,7 +58,9 @@ setup(
     maintainer_email="{{ cookiecutter.maintainer_email }}",
     packages=find_packages(exclude=["tests"]),
     license="{{ cookiecutter.license }}",
-    description=load_include("short_description.txt"),
+    description=load_include("short_description.txt").replace(
+        "\n", " "
+    ).replace("\r", "").strip(),
     long_description=load_include("README.md", transform=True),
     long_description_content_type="text/markdown",
     python_requires={% if cookiecutter.supports_pytwo == "yes" %}">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"{% else %}">=3.4"{% endif %},
