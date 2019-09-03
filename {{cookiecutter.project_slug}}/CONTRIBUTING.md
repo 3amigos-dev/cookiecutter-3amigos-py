@@ -25,7 +25,7 @@ efficient rather than be a challenge to overcome.
 
 ## Pull Request Process
 
-1. Update the README.rst with details of significant changes.
+1. Update the README.md with details of significant changes.
 2. You may merge the Pull Request in once you have the sign-off of one other developer, or if you 
    do not have permission to do that, you may request the reviewer to merge it for you.
 
