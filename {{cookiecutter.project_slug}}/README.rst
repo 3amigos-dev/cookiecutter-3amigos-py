@@ -53,59 +53,81 @@ Installation
 ============
 
 You can install {{ cookiecutter.project_slug }} for
-[Python](https://www.python.org/) via
-[pip](https://pypi.org/project/pip/)
-from [PyPI](https://pypi.org/).
+`Python`_ via `pip`_ from `PyPI`_.
 
-```
-$ pip install {{ cookiecutter.pypi_name }}
-```
+.. code-block:: bash
+
+    pip install {{ cookiecutter.pypi_name }}
 
 {{ cookiecutter.installation_notes }}
 
 {% if cookiecutter.app_requirements %}
-## Prerequisites:
+=============
+Prerequisites
+=============
 - {{ cookiecutter.app_requirements|replace('\n', '\n- ') }}
 {% endif %}
 
-## Download from PyPI.org
+======================
+Download from PyPI.org
+======================
 
 https://pypi.org/project/{{ cookiecutter.pypi_name }}/
 
 {{ cookiecutter.extended_readme }}
 
-# Contributing
+============
+Contributing
+============
 
 Contributions are very welcome, consider using the
-[file an issue](https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/issues)
+`file an issue`_
 to discuss the work before beginning, but if you already have a Pull Request
 ready then this is no problem, please submit it and it will be very gratefully
-considered. The [Contribution Guidelines](CONTRIBUTING.md)
+considered. The `Contribution Guidelines`_
 outlines the {{ cookiecutter.community_name }} commitment to ensuring all
 contributions receive appropriate recognition.
 
-# License
+=======
+License
+=======
 
 {% if cookiecutter.license == 'GPLv3+' %}
-Distributed under the terms of the [GPLv3](https://opensource.org/licenses/GPL-3.0)
+Distributed under the terms of the `GPLv3`_
 license, "{{ cookiecutter.project_name }}" is free and open source software
 {% elif cookiecutter.license == 'MIT' %}
-Distributed under the terms of the [MIT](http://opensource.org/licenses/MIT)
+Distributed under the terms of the `MIT`_
 license, "{{ cookiecutter.project_name }}" is free and open source software
 {% endif %}
 
-# Issues
+======
+Issues
+======
 
 If you encounter any problems, please
-[file an issue](https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/issues)
+`file an issue`_
 along with a detailed description.
 
-# Additional Documentation:
+========================
+Additional Documentation
+========================
 
-* [Online Documentation](https://{{ cookiecutter.readthedocs_name }}.readthedocs.io/en/latest/)
-* [News](NEWS.rst).
-* [Template Updates](COOKIECUTTER_UPDATES.md).
-* [Code of Conduct](CODE_OF_CONDUCT.md).
-* [Contribution Guidelines](CONTRIBUTING.md).
+- `Online Documentation`
+- `News`_
+- `Template Updates`_
+- `Code of Conduct`_
+- `Contribution Guidelines`_
 
 .. _`Online Documentation`: https://{{ cookiecutter.readthedocs_name }}.readthedocs.io/en/latest/
+.. _`News`: NEWS.rst
+.. _`Template Updates`: COOKIECUTTER_UPDATES.md
+.. _`Code of Conduct`: CODE_OF_CONDUCT.md
+.. _`Contribution Guidelines`: CONTRIBUTING.md
+.. _`Python`: https://www.python.org/
+.. _`pip`: https://pypi.org/project/pip/
+.. _`PyPI`: https://pypi.org/
+.. _`file an issue`: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}/issues)
+{% if cookiecutter.license == 'GPLv3+' %}.. _`GPLv3`: https://opensource.org/licenses/GPL-3.0
+{% elif cookiecutter.license == 'MIT' %}.. _`MIT`: http://opensource.org/licenses/MIT
+{% endif %}
+
