@@ -65,6 +65,12 @@ setup(
     long_description=load_include("README.md", transform=True),
     long_description_content_type="text/markdown",
     python_requires={% if cookiecutter.supports_pytwo == "yes" %}">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"{% else %}">=3.4"{% endif %},
+    test_suite="tests",
+    test_requires=[
+        elem.strip()
+        for elem in load_include("test_requires.txt").splitlines()
+        if elem.strip()
+    ],
     install_requires=[
         elem.strip()
         for elem in load_include("requirements.txt").splitlines()
