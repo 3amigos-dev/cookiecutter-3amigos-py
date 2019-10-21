@@ -124,6 +124,7 @@ unicode
 unmaintained
 urls
 utf
+wcmatch
 webgui
 xdist
 xml
