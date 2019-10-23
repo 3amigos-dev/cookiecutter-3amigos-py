@@ -53,6 +53,7 @@ Json
 junit
 JUnit
 li
+logdecorator
 lt
 lxml
 maxdepth
