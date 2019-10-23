@@ -6,6 +6,7 @@ Test modules for:
 
 from {{ cookiecutter.py_modulename }}.__main__ import main
 
+
 def test_main():
     """
     GIVEN the .__main__ module entry point WHEN calling main THEN the call
