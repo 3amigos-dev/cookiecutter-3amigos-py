@@ -64,7 +64,7 @@ setup(
     .strip(),
     long_description=load_include("README.md", transform=True),
     long_description_content_type="text/markdown",
-    python_requires={% if cookiecutter.supports_pytwo == "yes" %}">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"{% else %}">=3.4"{% endif %},
+    python_requires={% if cookiecutter.supports_pytwo == "yes" %}">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"{% else %}">=3.5"{% endif %},
     test_suite="tests",
     test_requires=[
         elem.strip()
@@ -85,10 +85,10 @@ setup(
             "Programming Language :: Python :: 2",
             "Programming Language :: Python :: 2.7",{% endif %}
             "Programming Language :: Python :: 3",
-            "Programming Language :: Python :: 3.4",
             "Programming Language :: Python :: 3.5",
             "Programming Language :: Python :: 3.6",
             "Programming Language :: Python :: 3.7",
+            "Programming Language :: Python :: 3.8",
             "Programming Language :: Python :: Implementation :: CPython",
             "Programming Language :: Python :: Implementation :: PyPy",
             "Operating System :: OS Independent",
