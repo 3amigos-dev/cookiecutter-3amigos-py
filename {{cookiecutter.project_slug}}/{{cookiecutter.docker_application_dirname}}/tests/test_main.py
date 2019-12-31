@@ -4,21 +4,17 @@ Test modules for:
 {{ cookiecutter.py_modulename }}.__main__
 """
 
+import pytest
 from click.testing import CliRunner
-import pytest.mark
 
 from {{ cookiecutter.py_modulename }}.__main__ import main
 
 
-@pytest.mark.parametrize(
-    "args", [
-        ([],),
-        (["invoke"],),
-    ],
-)
-def test_main(args):
+@pytest.mark.parametrize("args,expected", [([], 0), (["invoke"], 0)])
+def test_main(args, expected):
     """
-    GIVEN the .__main__ module entry point WHEN calling main THEN the call
+    GIVEN the {{ cookiecutter.py_modulename }}.__main__
+    module entry point WHEN calling main THEN the call
     executes successfully.
     """
     # Setup
@@ -26,4 +22,4 @@ def test_main(args):
     # Exercise
     result = runner.invoke(main, args)
     # Verify
-    assert result.exit_code == 0  # nosec
+    assert result.exit_code == expected  # nosec # noqa=S101
