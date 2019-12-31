@@ -17,6 +17,6 @@ def test_main():
     # Setup
     runner = CliRunner()
     # Exercise
-    runner.invoke(main, [])
+    result = runner.invoke(main, [])
     # Verify
     assert result.exit_code == 0  # nosec
