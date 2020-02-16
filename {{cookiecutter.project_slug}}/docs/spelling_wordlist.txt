@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 custom
 dictionary
 words
 go
 here
+=======
+>>>>>>> 6be692a4caac7d0232f2c96c226e5ae72397ba46
