@@ -64,7 +64,7 @@ setup(
     .strip(),
     long_description=load_include("README.md", transform=True),
     long_description_content_type="text/markdown",
-    python_requires={% if cookiecutter.supports_pytwo == "yes" %}">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"{% else %}">=3.6"{% endif %},
+    python_requires=">=3.6",
     test_suite="tests",
     test_requires=[
         elem.strip()
@@ -81,9 +81,7 @@ setup(
         elem
         for elem in [
             "Development Status :: 4 - Beta",
-            "Programming Language :: Python",{% if cookiecutter.supports_pytwo == "yes" %}
-            "Programming Language :: Python :: 2",
-            "Programming Language :: Python :: 2.7",{% endif %}
+            "Programming Language :: Python",
             "Programming Language :: Python :: 3",
             "Programming Language :: Python :: 3.6",
             "Programming Language :: Python :: 3.7",
