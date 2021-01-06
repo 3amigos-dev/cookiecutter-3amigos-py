@@ -8,11 +8,11 @@ BASEDIR="$( dirname "${THISDIR}" )"
 : [ "${PYVER:={{ cookiecutter.latest_python }}}" ]
 PYVERS=( "{{ cookiecutter.supported_python }}" )
 
-if ! which docker ; then
+if ! command -v docker ; then
     echo 'Docker is missing!' >&2
     exit 1
 fi
-if ! which docker-compose ; then
+if ! command -v docker-compose ; then
     echo 'Docker-Compose is missing!' >&2
     exit 1
 fi
