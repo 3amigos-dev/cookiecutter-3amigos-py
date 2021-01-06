@@ -4,7 +4,10 @@ services:
   # Service image
   {{ cookiecutter.docker_application_tagname }}:
     image: {{ cookiecutter.project_slug }}:latest
-    build: {{ cookiecutter.docker_application_dirname }}
+    build:
+      context: ./{{ cookiecutter.docker_application_dirname }}
+      args:
+        - PYVER=${PYVER}
     environment:
       - HAS_JOSH_K_SEAL_OF_APPROVAL
       - CI
