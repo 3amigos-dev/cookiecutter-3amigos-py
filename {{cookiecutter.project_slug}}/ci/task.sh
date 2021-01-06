@@ -6,7 +6,7 @@ THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASEDIR="$( dirname "${THISDIR}" )"
 
 : [ "${PYVER:={{ cookiecutter.latest_python }}}" ]
-PYVERS=( "${PYVER}" "3.8" "3.7" "3.6" )
+PYVERS=( "{{ cookiecutter.supported_python }}" )
 
 if ! which docker ; then
     echo 'Docker is missing!' >&2
