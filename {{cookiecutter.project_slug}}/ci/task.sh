@@ -5,7 +5,7 @@ set -euxo pipefail
 THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASEDIR="$( dirname "${THISDIR}" )"
 
-: [ "${PYVER:=3.9}" ]
+: [ "${PYVER:={{ cookiecutter.latest_python }}}" ]
 PYVERS=( "${PYVER}" "3.8" "3.7" "3.6" )
 
 if ! which docker ; then

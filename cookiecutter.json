@@ -35,10 +35,6 @@
     "appveyor_build_url": "https://ci.appveyor.com/project/{{ cookiecutter.appveyor_org }}/{{ cookiecutter.appveyor_repo }}",
     "installation_notes": "",
     "extended_readme": "",
-    "supports_pytwo": [
-        "yes",
-        "no"
-    ],
     "license": [
         "GPLv3+",
         "MIT"
@@ -46,5 +42,6 @@
     "entry_points": "",
     "package_data": "",
     "extra_manifest": "",
-    "test_requires": ""
+    "test_requires": "",
+    "latest_python": "3.9"
 }
