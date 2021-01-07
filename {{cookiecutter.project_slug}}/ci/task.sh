@@ -5,6 +5,9 @@ set -euxo pipefail
 THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASEDIR="$( dirname "${THISDIR}" )"
 
+: [ "${PYVER:={{ cookiecutter.latest_python }}}" ]
+PYVERS=( {{ cookiecutter.supported_python }} )
+
 if ! command -v docker ; then
     echo 'Docker is missing!' >&2
     exit 1
@@ -35,6 +38,20 @@ fi
 # shellcheck source=/dev/null
 source "${BASEDIR}/ci/shared/_docker_helper.sh"
 
-docker_compose_run "{{ cookiecutter.docker_application_tagname }}" "${IN_DOCKER}" "${@:2}"
-
-
+function saveenv {
+    cat <<EOF >"${BASEDIR}/.env"
+PYVER=${PYVER}
+EOF
+}
+case "${CMD}" in
+test)
+    for PYVER in "${PYVERS[@]}" ; do
+        saveenv
+        docker_compose_run "{{ cookiecutter.docker_application_tagname }}" "${IN_DOCKER}" "${@:2}"
+    done
+    ;;
+*)
+    saveenv
+    docker_compose_run "{{ cookiecutter.docker_application_tagname }}" "${IN_DOCKER}" "${@:2}"
+    ;;
+esac

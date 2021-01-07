@@ -3,8 +3,11 @@ version: '3.7'
 services:
   # Service image
   {{ cookiecutter.docker_application_tagname }}:
-    image: {{ cookiecutter.project_slug }}:latest
-    build: {{ cookiecutter.docker_application_dirname }}
+    image: {{ cookiecutter.project_slug }}:${PYVER}
+    build:
+      context: ./{{ cookiecutter.docker_application_dirname }}
+      args:
+        - PYVER=${PYVER}
     environment:
       - HAS_JOSH_K_SEAL_OF_APPROVAL
       - CI
