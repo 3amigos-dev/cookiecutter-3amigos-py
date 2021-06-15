@@ -13,6 +13,7 @@ apk add --no-cache \
     git \
     libxslt-dev \
     libffi-dev \
+    curl \
     openssl-dev {{ cookiecutter.extra_installs }}
 
 RUSTUP_HOME=/rust
