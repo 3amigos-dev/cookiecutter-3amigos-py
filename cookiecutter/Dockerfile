@@ -1,4 +1,4 @@
-FROM 3amigos/pipenv-all:latest
+FROM python:3.9-slim
 COPY install.sh /build/install.sh
 COPY pip /build/pip
 RUN /build/install.sh
