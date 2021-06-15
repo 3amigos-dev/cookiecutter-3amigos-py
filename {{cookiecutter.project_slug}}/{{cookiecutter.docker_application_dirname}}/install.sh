@@ -15,6 +15,15 @@ apk add --no-cache \
     libffi-dev \
     openssl-dev {{ cookiecutter.extra_installs }}
 
+RUSTUP_HOME=/rust
+export RUSTUP_HOME
+CARGO_HOME=/cargo 
+export CARGO_HOME
+PATH=/cargo/bin:/rust/bin:$PATH
+export PATH
+curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain nightly --no-modify-path
+rustup default nightly
+
 cd "${BASEDIR}/pip/${PYVER}"
 for reqfile in */requirements.txt ; do
 if [ "$(wc -l < "${reqfile}")" -gt 0 ] ; then
