@@ -5,7 +5,7 @@ set -euxo pipefail
 THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASEDIR="$( dirname "$( dirname "${THISDIR}" )" )"
 
-PYVER=3.8
+PYVER=3.9
 OUTPUTDIR="${BASEDIR}/output"
 
 cd "${BASEDIR}"
